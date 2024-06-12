@@ -1,0 +1,45 @@
+  <ul>
+
+    <% if user\_signed\_in? %>
+
+      <li>
+
+        <%= link\_to "Sign out", destroy\_user\_session\_path, method: :delete %>
+
+      </li>
+
+      <li>
+
+        Voici ton email : <%= current\_user.email %>
+
+      </li>
+
+      <li>
+
+        <%= link\_to "Secret page", static\_pages\_secret\_path %>
+
+      </li>
+
+      <li>
+
+        <%= link\_to "Edit email / password", edit\_user\_registration\_path %>
+
+      </li>
+
+    <% else %>
+
+      <li>
+
+        <%= link\_to "Sign in", new\_user\_session\_path %>
+
+      </li>
+
+      <li>
+
+        <%= link\_to "Sign up", new\_user\_registration\_path %>
+
+      </li>
+
+    <% end %>
+
+  </ul>

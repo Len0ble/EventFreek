@@ -1,0 +1,12 @@
+# app/views/users/show.html.erb
+<h1>Profil de <%= @user.email %></h1>
+<p>Prénom : <%= @user.first_name %></p>
+<p>Nom : <%= @user.last_name %></p>
+<p>Description : <%= @user.description %></p>
+<h2>Événements créés :</h2>
+<% @user.events.each do |event| %>
+  <div class="event">
+    <h3><%= link_to event.title, event %></h3>
+  </div>
+<% end %>
+<%= link_to 'Modifier mon profil', edit_user_registration_path, class: 'btn btn-primary' %>

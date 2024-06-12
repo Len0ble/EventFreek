@@ -1,0 +1,40 @@
+<!-- app/views/admin/events/edit.html.erb -->
+<h1>Edit Event</h1>
+<%= form_with model: @event, url: admin_event_path(@event), local: true do |form| %>
+  <div>
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :duration %>
+    <%= form.number_field :duration, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location, class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.label :validated %>
+    <%= form.check_box :validated %>
+  </div>
+  <div>
+    <%= form.label :reviewed %>
+    <%= form.check_box :reviewed %>
+  </div>
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>
+<%= link_to 'Back', admin_event_path(@event) %>

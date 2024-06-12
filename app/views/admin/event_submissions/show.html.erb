@@ -1,0 +1,8 @@
+<!-- app/views/admin/event_submissions/show.html.erb -->
+<h1>Event: <%= @event.title %></h1>
+<p>Title: <%= @event.title %></p>
+<p>Description: <%= @event.description %></p>
+<p>Validated: <%= @event.validated %></p>
+<p>Reviewed: <%= @event.reviewed %></p>
+<%= link_to 'Edit', edit_admin_event_submission_path(@event) %>
+<%= link_to 'Back', admin_event_submissions_path %>
